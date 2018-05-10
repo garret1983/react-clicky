@@ -6,6 +6,8 @@ const Header = props => (
         <div className="title">{props.children}</div>
         <div className="scores">
             Score: {props.score} 
+            <br></br>
+            Highscore: {props.highscore}
         </div>
     </div>
 ); 

@@ -16,7 +16,7 @@ class App extends Component {
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({ highscore: this.state.score }, function () {
-        // console.log(this.state.highscore);
+        console.log(this.state.highscore);
       });
     }
 
@@ -34,8 +34,8 @@ class App extends Component {
       if (o.id === id) {
         if (cards[i].count === 0) {
           cards[i].count = cards[i].count = 1;
-          this.setState({ score: this.state.score + 1 }, function () {
-            // console.log(this.state.score);
+          this.setState({ score: this.state.score + 1 }, () => {
+            console.log(this.state.score);
           });
           this.state.cards.sort(() => Math.random() - 0.5)
           return true;
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.setState.highscore}>Clicky Game<h5>Try not to click the same image twice!</h5></Header>
+        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game<h5>Try not to click the same image twice!</h5></Header>
         {this.state.cards.map(card => (
           <Card
           clickCount={this.clickCount}
