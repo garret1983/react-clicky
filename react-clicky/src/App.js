@@ -24,7 +24,7 @@ class App extends Component {
     this.state.cards.forEach(card => {
       card.count = 0;
     });
-    alert("game over");
+    alert("Game Over, Try again loser!");
     this.setState({ score: 0 });
     return true;
   }
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.setState.highscore}>Clicky Game</Header>
+        <Header score={this.state.score} highscore={this.setState.highscore}>Clicky Game<h5>Try not to click the same image twice!</h5></Header>
         {this.state.cards.map(card => (
           <Card
           clickCount={this.clickCount}
