@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import Card from "./component/Card";
 import Wrapper from "./component/Wrapper";
 import Header from "./component/Header";
-import cards from ".cards.json";
+import cards from "./component/cards.json";
+import './App.css';
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({ highscore: this.state.score }, function () {
-        console.log(this.state.highscore);
+        // console.log(this.state.highscore);
       });
     }
 
@@ -24,7 +24,7 @@ class App extends Component {
     this.state.cards.forEach(card => {
       card.count = 0;
     });
-    alert("game over \nscore: ${this.state.score}");
+    alert("game over");
     this.setState({ score: 0 });
     return true;
   }
@@ -35,7 +35,7 @@ class App extends Component {
         if (cards[i].count === 0) {
           cards[i].count = cards[i].count = 1;
           this.setState({ score: this.state.score + 1 }, function () {
-            console.log(this.state.score);
+            // console.log(this.state.score);
           });
           this.state.cards.sort(() => Math.random() - 0.5)
           return true;
